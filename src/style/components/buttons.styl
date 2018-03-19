@@ -1,0 +1,222 @@
+/*--------------------------------------------------------------------
+*
+* $BUTTONS
+*
+--------------------------------------------------------------------*/
+
+.button
+  display: inline-block
+  border: none
+  border-radius: 3px
+  padding-left: $ui-padding-spaced
+  padding-right: $ui-padding-spaced
+  text-align: center
+  cursor: pointer
+  background-color: $primary-color
+
+  transition-delay: 0
+  transition-duration: .3s
+  transition-timing-function: ease-in
+  transition-property: background, border-color
+  user-select: none
+  appearance: none
+
+  &:not([class*='button-outlined'])
+    padding-top: $ui-padding-default
+    padding-bottom: $ui-padding-default
+
+  &:hover
+    background-color: darken($primary-color, 25%)
+
+  &:disabled,
+  .button-disabled
+    background-color: $primary-color-light
+    cursor: not-allowed
+
+  &:focus
+    outline: none
+
+.button,
+.button:hover
+  color: white
+
+//- Button Sizing
+
+.button-small
+  padding: ceil($ui-padding-narrow/2) $ui-padding-narrow
+  font-size: $font-small
+
+.button-large
+  padding: $ui-padding-spaced $ui-padding-spaced*2
+  font-size: $font-large
+
+//- Button Coloring
+
+.button-unstyled,
+.button-unstyled:hover
+  background-color: transparent
+
+.button-unstyled
+  padding: 0
+  color: $primary-color
+
+  &:hover
+    color: darken($primary-color, 20%)
+
+.button-neutral
+  background-color: $silver
+
+  &:hover
+    background-color: $base
+
+  &:disabled,
+  .button-disabled
+    background-color: $ghost
+    color: $base
+
+    &:hover
+      color: $base
+
+.button-neutral,
+.button-neutral:hover
+  color: $charcoal
+
+.button-approve
+  background-color: $success-color
+
+  &:hover
+    background-color: darken($success-color, 20%)
+
+  &:disabled,
+  .button-disabled
+    background-color: $success-color-light
+
+.button-warn
+  background-color: $red
+
+  &:hover
+    background-color: darken($alert-color, 20%)
+
+  &:disabled,
+  &.button-disabled
+    background-color: $alert-color-light
+
+.button-caution
+  background-color: transparent
+  color: $red
+  text-decoration: underline
+
+  &:hover
+    background-color: transparent
+    color: darken($alert-color, 20%)
+
+  &:disabled,
+  .button-disabled
+    color: $base
+
+*[class*='button-outlined']
+  border-width: 2px
+  border-style: solid
+  padding-top: $ui-padding-default - 2px
+  padding-bottom: $ui-padding-default - 2px
+
+*[class*='button-outlined'],
+*[class*='button-outlined']:hover
+*[class*='button-outlined']:disabled
+  background-color: transparent
+
+.button-outlined
+  border-color: $primary-color
+  color: $primary-color
+
+  &:hover
+    border-color: darken($primary-color, 20%)
+    color: darken($primary-color, 20%)
+
+  &:disabled
+    border-color: $primary-color-light
+    color: $primary-color-light
+
+.button-outlined-neutral
+  border-color: $base
+  color: $jumbo
+
+  &:hover
+    border-color: $jumbo
+    color: $charcoal
+
+  &:disabled,
+  &.button-disabled
+    color: lighten($secondary-color, 20%)
+    border-color: $secondary-color-lighter
+
+    &:hover
+      color: lighten($secondary-color-light, 20%)
+
+.button-outlined-approve
+  border-color: $success-color
+  color: $success-color
+
+  &:hover
+    border-color: darken($success-color, 20%)
+    color: darken($success-color, 20%)
+
+  &:disabled
+    border-color: $success-color-light
+    color: $success-color-light
+
+.button-outlined-warn
+  border-color: $alert-color
+  color: $alert-color
+
+  &:hover
+    border-color: darken($alert-color, 20%)
+    color: darken($alert-color, 20%)
+
+  &:disabled
+    border-color: $alert-color-light
+    color: $alert-color-light
+
+//- Button Group
+
+.button-group
+
+  .button
+    border-radius: 0
+    margin-left: -1px
+    border: 1px solid darken($primary-color, 20%)
+
+    &:first-child,
+    &:first-child:only-child
+      margin: 0
+
+    &:first-child:only-child
+      border-radius: 3px
+
+    &:first-child
+      border-radius: 3px 0 0 3px
+
+    &:last-child
+      border-radius: 0 3px 3px 0
+
+  .button-neutral,
+  .button-outlined
+    border: 1px solid $base
+
+@media screen and (max-width: $breakpoint-smartphone)
+
+  .button-group
+
+    .button
+      border-radius: none
+      margin: 0
+      width: 100%
+
+      &:first-of-type
+        border-radius: 3px 3px 0 0
+
+      &:last-of-type
+        border-radius: 0 0 3px 3px
+
+    .button:not(:last-of-type)
+      border-bottom: none

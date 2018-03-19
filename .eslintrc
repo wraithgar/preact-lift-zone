@@ -1,0 +1,7 @@
+{
+  "extends": "eslint-config-synacor",
+  "rules": {
+    "jsx-quotes": [2, "prefer-single"],
+    "indent": ["error", 2]
+  }
+}

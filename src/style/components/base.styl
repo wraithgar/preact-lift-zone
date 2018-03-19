@@ -1,0 +1,78 @@
+/*--------------------------------------------------------------------
+*
+* $BASE
+*
+--------------------------------------------------------------------*/
+
+*, *:after, *:before
+  box-sizing: border-box
+
+html
+  height: 100%
+
+body
+  min-height: 100%
+  font-family: $font-helvetica
+  font-weight: $font-weight-regular
+  font-size: $font-base
+  line-height: $line-height-base
+  color: $jet
+
+p
+  margin-top: 0
+  margin-bottom: $space
+
+//- Links
+
+a
+  color: $primary-color
+  text-decoration: none
+  cursor: pointer
+
+  &:focus
+    outline: none
+
+  &:hover
+    cursor: pointer
+    //color: darken($primary-color, 20%)
+
+hr
+  border: solid #DDDDDD
+  border-width: 1px 0 0
+  clear: both
+  height: 0
+  margin: 1.25rem 0 1.1875rem
+
+//- Helper classes
+
+.pull-left
+  float: left
+
+.pull-right
+  float: right
+
+.hide
+  display: none
+
+.cf
+  &:before,
+  &:after
+    content: " "
+    display: table
+
+  &:after
+    clear: both
+
+.panel
+  border-style: solid
+  border-width: 1px
+  border-color #D8D8D8
+  margin-bottom: 1.25rem
+  padding: 1.25rem
+  background: #F2F2F2
+  color: #333333
+
+//- Images and media
+
+img, iframe, video
+  max-width: 100%
